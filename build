@@ -125,6 +125,14 @@ cat "$SHELL_FOLDER/src/file_list.txt" | while read line; do
 	fi
 done
 extract 360万中文词库+词性+词频.zip || exit
+
+git clone https://github.com/rime/rime-essay --depth=1
+git clone https://github.com/rime/rime-pinyin-simp --depth=1
+git clone https://github.com/thunlp/THUOCL --depth=1
+git clone https://github.com/rime/rime-emoji --depth=1
+git clone https://github.com/fkxxyz/rime-symbols --depth=1
+git clone https://github.com/fkxxyz/libscel --depth=1
+
 ln -sf rime-essay/essay.txt essay.txt || exit
 ln -sf rime-pinyin-simp/pinyin_simp.dict.yaml pinyin_simp.dict.yaml || exit
 

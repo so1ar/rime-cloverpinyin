@@ -20,9 +20,9 @@ pypinyin.load_phrases_dict({
     '还珠格格': [['huán'], ['zhū'], ['gé'], ['gé']]
     })
 
-pypinyin.load_phrases_dict({
-    '帧': [['zhēn']]
-    })
+#pypinyin.load_phrases_dict({
+#    '帧': [['zhēn']]
+#    })
 
 class DictGenerator:
     def fixPinyin(self, pinyin):

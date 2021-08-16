@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm -rf cache
+rm -rf data
+
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 
 

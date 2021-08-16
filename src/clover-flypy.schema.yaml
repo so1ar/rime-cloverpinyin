@@ -108,28 +108,28 @@ speller:
     - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
     #- abbrev/^(.).+$/$1/
     # 基础
-    - abbrev/^([a-z]).+$/$1/
-    - abbrev/^([zcs]h).+$/$1/
+    #- abbrev/^([a-z]).+$/$1/
+    #- abbrev/^([zcs]h).+$/$1/
     
     # 补全
-    - derive/([dtngkhrzcs])o(u|ng)$/$1o/   # o = ou; o = ong
-    - derive/ong$/on/      # on = ong
-    - derive/^ding$/din/     # din = ding
+    #- derive/([dtngkhrzcs])o(u|ng)$/$1o/   # o = ou; o = ong
+    #- derive/ong$/on/      # on = ong
+    #- derive/^ding$/din/     # din = ding
     
     # 处理 v 和 u
-    - derive/^([nl])ue$/$1ve/   # nve = nue; lve = lue
-    - derive/^([jqxy])u/$1v/    # v = u; v = u
+    #- derive/^([nl])ue$/$1ve/   # nve = nue; lve = lue
+    #- derive/^([jqxy])u/$1v/    # v = u; v = u
     
     # 智能纠错
-    - derive/ao$/oa/       # oa = ao
-    - derive/([iu])a(o|ng?)$/a$1$2/   # aio = iao; aing = iang; aung = uang
-    - derive/([aeiou])ng$/$1gn/   # gn = ng
-    - derive/un$/uen/    # uen = un
-    - derive/ui$/uei/    # uei = ui
-    - derive/iu$/iou/    # iou = ui
-    - derive/tie$/tei/    # tei = tie
-    - derive/i$/ii/      # ii = i  # i 不小心按两下
-    - derive/u$/uu/      # ui = u  # u 不小心按两下
+    #- derive/ao$/oa/       # oa = ao
+    #- derive/([iu])a(o|ng?)$/a$1$2/   # aio = iao; aing = iang; aung = uang
+    #- derive/([aeiou])ng$/$1gn/   # gn = ng
+    #- derive/un$/uen/    # uen = un
+    #- derive/ui$/uei/    # uei = ui
+    #- derive/iu$/iou/    # iou = ui
+    #- derive/tie$/tei/    # tei = tie
+    #- derive/i$/ii/      # ii = i  # i 不小心按两下
+    #- derive/u$/uu/      # ui = u  # u 不小心按两下
 
 translator:
   dictionary: clover
@@ -166,9 +166,9 @@ translator:
     - "xform/(^|[ '])u/$1sh/"
     - xform/([jqxy])v/$1u/
     - xform/([nl])v/$1ü/
-    - xform/([nl])v/$1ü/
-    - xform/([nl])ue/$1üe/
-    - xform/([jqxy])v/$1u/
+    #- xform/([nl])v/$1ü/
+    #- xform/([nl])ue/$1üe/
+    #- xform/([jqxy])v/$1u/
 
 punctuator:
   import_preset: symbols

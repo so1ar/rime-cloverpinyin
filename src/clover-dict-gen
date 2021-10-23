@@ -20,6 +20,13 @@ pypinyin.load_phrases_dict({
     '还珠格格': [['huán'], ['zhū'], ['gé'], ['gé']]
     })
 
+pypinyin.load_phrases_dict({
+    '前传': [['qián'], ['zhuàn']]
+    })
+
+pypinyin.load_phrases_dict({
+    '后传': [['hòu'], ['zhuàn']]
+    })
 #pypinyin.load_phrases_dict({
 #    '帧': [['zhēn']]
 #    })

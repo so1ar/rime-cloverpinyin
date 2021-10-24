@@ -9,6 +9,9 @@ import argparse
 import os
 import sys
 
+from pypinyin_dict.phrase_pinyin_data import cc_cedict
+cc_cedict.load()
+
 # 从 pypinyin 库里得到所有文字及其若干个拼音
 pinyin_dict = pypinyin.pinyin_dict.pinyin_dict
 replace_symbol_to_no_symbol = pypinyin.style._utils.replace_symbol_to_no_symbol
@@ -16,9 +19,9 @@ initials_set = set(pypinyin.style._constants._INITIALS)   # 声母表
 initials_set.add('ng')
 
 # 修复一些多音字错误
-pypinyin.load_phrases_dict({
-    '还珠格格': [['huán'], ['zhū'], ['gé'], ['gé']]
-    })
+#pypinyin.load_phrases_dict({
+#    '还珠格格': [['huán'], ['zhū'], ['gé'], ['gé']]
+#    })
 
 pypinyin.load_phrases_dict({
     '前传': [['qián'], ['zhuàn']]
@@ -27,9 +30,6 @@ pypinyin.load_phrases_dict({
 pypinyin.load_phrases_dict({
     '后传': [['hòu'], ['zhuàn']]
     })
-#pypinyin.load_phrases_dict({
-#    '帧': [['zhēn']]
-#    })
 
 class DictGenerator:
     def fixPinyin(self, pinyin):

@@ -64,7 +64,6 @@ simplifier:
 es_conversion:
   opencc_config: es.json
   option_name: show_es
-  tips: all
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba

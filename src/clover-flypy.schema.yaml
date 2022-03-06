@@ -19,7 +19,7 @@ switches:
     reset: 0
     states: [ 简, 繁 ]
   - name: show_es
-    reset: 1
+    reset: 0
     states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
   - name: ascii_punct
     reset: 0

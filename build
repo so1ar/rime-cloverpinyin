@@ -140,7 +140,12 @@ git clone https://github.com/fkxxyz/libscel --depth=1
 ln -sf rime-essay/essay.txt essay.txt || exit
 ln -sf rime-pinyin-simp/pinyin_simp.dict.yaml pinyin_simp.dict.yaml || exit
 
+cp ../src/es_modify.patch rime-opencc_emoji_symbols/es_modify.patch || exit
+
 ## 生成符号列表
+cd rime-opencc_emoji_symbols
+patch < es_modify.patch
+cd ..
 #cd rime-symbols || exit
 #mkdir -p opencc || exit
 #cd opencc || exit

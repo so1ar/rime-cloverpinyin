@@ -19,7 +19,7 @@ switches:
     reset: 0
     states: [ 简, 繁 ]
   - name: emoji_suggestion
-    reset: 0
+    reset: 1
     states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
   - name: symbol_support
     reset: 1

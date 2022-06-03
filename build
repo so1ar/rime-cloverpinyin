@@ -132,28 +132,22 @@ extract 360万中文词库+词性+词频.zip || exit
 git clone https://github.com/rime/rime-essay --depth=1
 git clone https://github.com/rime/rime-pinyin-simp --depth=1
 git clone https://github.com/thunlp/THUOCL --depth=1
-#git clone https://github.com/rime/rime-emoji --depth=1
-#git clone https://github.com/fkxxyz/rime-symbols --depth=1
-git clone https://github.com/rtransformation/rime-opencc_emoji_symbols --depth=1
+git clone https://github.com/rime/rime-emoji --depth=1
+git clone https://github.com/so1ar/rime-symbols --depth=1
 git clone https://github.com/fkxxyz/libscel --depth=1
 
 ln -sf rime-essay/essay.txt essay.txt || exit
 ln -sf rime-pinyin-simp/pinyin_simp.dict.yaml pinyin_simp.dict.yaml || exit
 
-cp ../src/es_modify.patch rime-opencc_emoji_symbols/es_modify.patch || exit
+# 生成符号列表
+cd rime-symbols || exit
+mkdir -p opencc || exit
+cd opencc || exit
+../rime-symbols-gen || exit
+cd ../.. || exit
 
-## 生成符号列表
-cd rime-opencc_emoji_symbols
-patch < es_modify.patch
-cd ..
-#cd rime-symbols || exit
-#mkdir -p opencc || exit
-#cd opencc || exit
-#../rime-symbols-gen || exit
-#cd ../.. || exit
-#
-## 生成符号词汇
-cat rime-opencc_emoji_symbols/*.txt | opencc -c t2s.json | uniq > symbols.txt
+# 生成符号词汇
+cat */opencc/*.txt | opencc -c t2s.json | uniq > symbols.txt
 
 # 开始生成词典
 ../src/clover-dict-gen --minfreq=$minfreq || exit
@@ -173,9 +167,8 @@ cd ../data
 
 # 生成 opencc 目录
 mkdir -p opencc
-cp ../cache/rime-opencc_emoji_symbols/es.{json,txt} opencc
-#cp ../cache/rime-emoji/opencc/* opencc
-#cp ../cache/rime-symbols/opencc/* opencc
+cp ../cache/rime-emoji/opencc/* opencc
+cp ../cache/rime-symbols/opencc/* opencc
 
 echo 开始构建部署二进制
 rime_deployer --compile clover.schema.yaml . /usr/share/rime-data || exit

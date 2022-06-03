@@ -24,6 +24,9 @@ switches:
   - name: symbol_support
     reset: 1
     states: [ "无符", "符" ]
+  - name: extra
+    reset: 1
+    states: [ "NE", "E" ]
   - name: ascii_punct
     reset: 0
     states: [ 。，, ．， ]
@@ -55,6 +58,7 @@ engine:
   filters:
     - simplifier@emoji_suggestion
     - simplifier@symbol_support
+    - simplifier@extra
     - simplifier
     - uniquifier
 
@@ -70,6 +74,11 @@ emoji_suggestion:
 symbol_support:
   opencc_config: symbol.json
   option_name: symbol_support
+  tips: all
+
+extra:
+  opencc_config: extra.json
+  option_name: extra
   tips: all
 
 speller:

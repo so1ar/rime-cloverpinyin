@@ -139,6 +139,11 @@ git clone https://github.com/fkxxyz/libscel --depth=1
 ln -sf rime-essay/essay.txt essay.txt || exit
 ln -sf rime-pinyin-simp/pinyin_simp.dict.yaml pinyin_simp.dict.yaml || exit
 
+mkdir extra
+cd extra
+cp -r ../../src/opencc .
+cd ..
+
 # 生成符号列表
 cd rime-symbols || exit
 mkdir -p opencc || exit
@@ -169,6 +174,7 @@ cd ../data
 mkdir -p opencc
 cp ../cache/rime-emoji/opencc/* opencc
 cp ../cache/rime-symbols/opencc/* opencc
+cp ../cache/extra/opencc/* opencc
 
 echo 开始构建部署二进制
 rime_deployer --compile clover.schema.yaml . /usr/share/rime-data || exit

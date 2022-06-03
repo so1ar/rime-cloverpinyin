@@ -6,7 +6,7 @@
 
 - 加入小鹤双拼方案，将`default.custom.yaml`文件中的`clover`改成`clover-flypy`，重新部署即可使用；    
 - 使用[pypinyin-dict](https://github.com/mozillazg/pypinyin-dict)导入`cc_cedict`的数据，（可能）提高了词库拼音的准确率；    
-- 使用[rime-opencc_emoji_symbols](https://github.com/rtransformation/rime-opencc_emoji_symbols)作为emoji和符号转换方案；
+- fork了[rime-symbols](https://github.com/so1ar/rime-symbols)，并修复了与新版opencc不兼容的问题；    
 - 构建时使用词库的最新版本。    
 
 ## 安装使用

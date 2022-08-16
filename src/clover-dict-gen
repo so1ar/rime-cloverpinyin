@@ -31,6 +31,10 @@ pypinyin.load_phrases_dict({
     '后传': [['hòu'], ['zhuàn']]
     })
 
+pypinyin.load_phrases_dict({
+    '便宜': [['pián'], ['yi']]
+    })
+
 class DictGenerator:
     def fixPinyin(self, pinyin):
         """

@@ -12,6 +12,9 @@ import sys
 from pypinyin_dict.phrase_pinyin_data import cc_cedict
 cc_cedict.load()
 
+from pypinyin_dict.phrase_pinyin_data import di
+di.load()
+
 # 从 pypinyin 库里得到所有文字及其若干个拼音
 pinyin_dict = pypinyin.pinyin_dict.pinyin_dict
 replace_symbol_to_no_symbol = pypinyin.style._utils.replace_symbol_to_no_symbol
@@ -33,6 +36,10 @@ pypinyin.load_phrases_dict({
 
 pypinyin.load_phrases_dict({
     '便宜': [['pián'], ['yi']]
+    })
+
+pypinyin.load_phrases_dict({
+    '重点': [['zhòng'], ['diǎn']]
     })
 
 class DictGenerator:

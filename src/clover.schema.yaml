@@ -98,7 +98,7 @@ speller:
     - derive/^ding$/din/     # din = ding
     
     # 处理 v 和 u
-    - derive/^([nl])ue$/$1ve/   # nve = nue; lve = lue
+    - derive/^([nl])ve$/$1ue/   # nue = nve; lue = lve
     - derive/^([jqxy])u/$1v/    # v = u; v = u
     
     # 智能纠错

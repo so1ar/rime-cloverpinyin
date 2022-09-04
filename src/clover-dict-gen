@@ -42,6 +42,10 @@ pypinyin.load_phrases_dict({
     '重点': [['zhòng'], ['diǎn']]
     })
 
+pypinyin.load_phrases_dict({
+    '长时间': [['cháng'], ['shí'], ['jiān']]
+    })
+
 class DictGenerator:
     def fixPinyin(self, pinyin):
         """

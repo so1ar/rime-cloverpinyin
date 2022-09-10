@@ -9,6 +9,7 @@
 - 使用[pypinyin-dict](https://github.com/mozillazg/pypinyin-dict)导入`地`字的词组；    
 - fork了[rime-symbols](https://github.com/so1ar/rime-symbols)，并修复了与新版opencc不兼容的问题；    
 - 构建时使用词库的最新版本。    
+- ~~加入了一些自己的私货。。~~    
 
 ## 安装使用
 
